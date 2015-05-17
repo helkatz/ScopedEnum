@@ -2,7 +2,7 @@
 ###Version
 1.0.0
 
-SCOPED_ENUM declares a scoped enum with the following features
+SCOPED_ENUM declares a enum with the following features
 * use toString to get a string literal of the actual enum value
 * enum can only be used with full qualified name that allows the declaration of enums
   in the same scope with same enum values
@@ -29,7 +29,7 @@ SCOPED_ENUM(e2,
 	C
 );
 ```
-usage simply delare like an enum
+usage simply declare like an native enum
 ```C++
 #include "ScopedEnum.h"
 SCOPED_ENUM(eTest,
