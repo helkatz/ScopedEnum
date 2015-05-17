@@ -31,6 +31,7 @@ SCOPED_ENUM(e2,
 ```
 usage simply delare like an enum
 ```C++
+#include "ScopedEnum.h"
 SCOPED_ENUM(eTest,
 	A=1,
 	B=3,
@@ -41,10 +42,10 @@ SCOPED_ENUM(eTest,
 )
 
 eTest e1 = eTest::EValue;
-cout << e1.toString();
-prints out EValue(10)
-cout << e1;
-prints out 10
+std::cout << e1.toString();
+// prints out EValue(10)
+std::cout << e1;
+// prints out 10
 ```
 
 
