@@ -45,7 +45,6 @@ cout << e1.toString();
 prints out EValue(10)
 cout << e1;
 prints out 10
-# Dillinger
 ```
 
 
