@@ -8,7 +8,7 @@ SCOPED_ENUM declares a scoped enum with the following features
   in the same scope with same enum values
 
 the following declaration of the two enums causes an compiler error
-```
+```C++
 enum e1 {
 	A,
 	B
@@ -19,7 +19,7 @@ enum e2 {
 }
 ```
 the following declaration of the two enums are allowed
-```
+```C++
 SCOPED_ENUM(e1,
 	A,
 	B
@@ -30,7 +30,7 @@ SCOPED_ENUM(e2,
 );
 ```
 usage simply delare like an enum
-```
+```C++
 SCOPED_ENUM(eTest,
 	A=1,
 	B=3,
