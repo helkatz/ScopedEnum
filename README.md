@@ -1,4 +1,6 @@
 # ScopedEnum
+###Version
+1.0.0
 
 SCOPED_ENUM declares a scoped enum with the following features
 * use toString to get a string literal of the actual enum value
@@ -6,6 +8,7 @@ SCOPED_ENUM declares a scoped enum with the following features
   in the same scope with same enum values
 
 the following declaration of the two enums causes an compiler error
+```
 enum e1 {
 	A,
 	B
@@ -14,8 +17,9 @@ enum e2 {
 	A, // compiler error
 	C
 }
-
+```
 the following declaration of the two enums are allowed
+```
 SCOPED_ENUM(e1,
 	A,
 	B
@@ -24,8 +28,9 @@ SCOPED_ENUM(e2,
 	A,
 	C
 );
-
+```
 usage simply delare like an enum
+```
 SCOPED_ENUM(eTest,
 	A=1,
 	B=3,
@@ -40,5 +45,7 @@ cout << e1.toString();
 prints out EValue(10)
 cout << e1;
 prints out 10
+# Dillinger
+```
 
 
