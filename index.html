@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="ScopedEnum : initial">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>ScopedEnum</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/helkatz/ScopedEnum">View on GitHub</a>
+
+          <h1 id="project_title">ScopedEnum</h1>
+          <h2 id="project_tagline">initial</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/helkatz/ScopedEnum/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/helkatz/ScopedEnum/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="scopedenum" class="anchor" href="#scopedenum" aria-hidden="true"><span class="octicon octicon-link"></span></a>ScopedEnum</h1>
+
+<h3>
+<a id="version" class="anchor" href="#version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version</h3>
+
+<p>1.0.0</p>
+
+<p>SCOPED_ENUM declares a enum with the following features</p>
+
+<ul>
+<li>use toString to get a string literal of the actual enum value</li>
+<li>enum can only be used with full qualified name that allows the declaration of enums
+in the same scope with same enum values</li>
+</ul>
+
+<p>the following declaration of the two enums causes an compiler error</p>
+
+<div class="highlight highlight-C++"><pre><span class="pl-k">enum</span> <span class="pl-c1">e1</span> {
+    A,
+    B
+}
+<span class="pl-k">enum</span> <span class="pl-c1">e2</span> {
+    A, <span class="pl-c">// compiler error</span>
+    C
+}</pre></div>
+
+<p>the following declaration of the two enums are allowed</p>
+
+<div class="highlight highlight-C++"><pre><span class="pl-en">SCOPED_ENUM</span>(<span class="pl-c1">e1</span>,
+    A,
+    B
+);
+<span class="pl-en">SCOPED_ENUM</span>(<span class="pl-c1">e2</span>,
+    A,
+    C
+);</pre></div>
+
+<p>usage simply declare like an native enum</p>
+
+<div class="highlight highlight-C++"><pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">"</span>ScopedEnum.h<span class="pl-pds">"</span></span>
+<span class="pl-en">SCOPED_ENUM</span>(eTest,
+    A=<span class="pl-c1">1</span>,
+    B=<span class="pl-c1">3</span>,
+    C=<span class="pl-c1">5</span>,
+    D,
+    EValue = <span class="pl-c1">10</span>,
+    FValue
+)
+
+eTest e1 = eTest::EValue;
+std::cout &lt;&lt; <span class="pl-c1">e1</span>.toString();
+<span class="pl-c">// prints out EValue(10)</span>
+std::cout &lt;&lt; <span class="pl-c1">e1</span>;
+<span class="pl-c">// prints out 10</span></pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">ScopedEnum maintained by <a href="https://github.com/helkatz">helkatz</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
